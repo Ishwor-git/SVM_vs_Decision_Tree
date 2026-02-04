@@ -48,7 +48,7 @@ for any data point $x_i$ marginal classifier predicts based on which side of pla
 - if $w^T+b \leq -1$ we label it with $-1$
 
 #### Functional Margin
-We want the classifier to not just be `"right",` but to be `"right by a lot"`. We define the functional margin of a point $(x_i​,y_i​)$ as:
+We want the classifier to not just be `"right",` but to be `"right by a lot"`. We define the functional margin of a point $(x_i​,y_i​)$ as: <br>
 $$\hat{\gamma _i} = y_i (w^T + b)$$
 
 An SVM is confident when $\hat{\gamma_i}$​ is a large positive number. If $\hat{\gamma_i} > 0$, the point is correctly classified.
@@ -67,11 +67,11 @@ We introduce a non-negative slack variable, $\xi_i >0$, for every training point
 - $\xi_i \geq 1$: The point is outside the margin (misclassified).
 
 #### The Objective Function
-The goal is to maximize the margin while simultaneously minimizing the classification error. We solve the following optimization problem:
+The goal is to maximize the margin while simultaneously minimizing the classification error. We solve the following optimization problem: <br>
 
 $$\min_{w, b} \frac{1}{2} \|w\|^2 + C \sum_{i=1}^{n} \xi_i$$
 
-**Subject to:**
+**Subject to:** <br>
 $$y_i (w^T x_i + b) \geq 1 - \xi_i, \quad \forall i$$
 
 Objective Function aims to minmize two things : 
