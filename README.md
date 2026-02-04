@@ -38,6 +38,7 @@ It is a type of classifier that classifies the data points by drawing the margin
 Hyperplane is $(n -1)D$ for $nD$ data.
 
 for $n-dimesional$ space, equation of hyperplane is, 
+
 $$w^T+b=0$$
 where,<br>
 - $w$ is weight vvector 
@@ -48,7 +49,8 @@ for any data point $x_i$ marginal classifier predicts based on which side of pla
 - if $w^T+b \leq -1$ we label it with $-1$
 
 #### Functional Margin
-We want the classifier to not just be `"right",` but to be `"right by a lot"`. We define the functional margin of a point $(x_i​,y_i​)$ as: <br>
+We want the classifier to not just be `"right",` but to be `"right by a lot"`. We define the functional margin of a point $(x_i​,y_i​)$ as:
+
 $$\hat{\gamma _i} = y_i (w^T + b)$$
 
 An SVM is confident when $\hat{\gamma_i}$​ is a large positive number. If $\hat{\gamma_i} > 0$, the point is correctly classified.
@@ -72,6 +74,7 @@ The goal is to maximize the margin while simultaneously minimizing the classific
 $$\min_{w, b} \frac{1}{2} \|w\|^2 + C \sum_{i=1}^{n} \xi_i$$
 
 **Subject to:** <br>
+
 $$y_i (w^T x_i + b) \geq 1 - \xi_i, \quad \forall i$$
 
 Objective Function aims to minmize two things : 
@@ -85,12 +88,15 @@ $C$ is the hyper parameter that balance the above two competing gooals.
 
 #### Hinge Loss
 In coding we don't explicitely use $\xi_i$ insted we use hinge loss
+
 $$L = \max(0, 1 - y_i(w^T x_i + b))$$
 
 This comes  from our constrain 
+
 $$ \xi_i \geq 1 - y_i (w^T x_i + b), \quad \forall i$$
 
 so our final objective becomes 
+
 $$\min_{w, b} \frac{1}{2} \|w\|^2 + C \sum_{i=1}^{n} \max(0, 1 - y_i(w^T x_i + b))$$
 
 ### 2. Decision tree
@@ -115,6 +121,7 @@ The goal is to choose $j$ and $t$ such that the resulting child nodes are as `pu
 This is the measure  of how often a randomly chosen element from the set would be incorrectly labeled if it was randomly labeled according to the distribution of labels in the subset.
 
 For a node $m$ with $K$ classes, the Gini Impurity $G$ is:
+
 $$G = 1 - \sum_{k=1}^{K} p_k^2$$
 
 Where $p_k​$ is the proportion of observations in node $m$ belonging to class $k$.
