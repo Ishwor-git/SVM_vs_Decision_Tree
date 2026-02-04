@@ -57,7 +57,7 @@ class LinearSVM:
         margins = y * (np.dot(X, self.w) + self.b)
         hinge_loss = np.maximum(0, 1 - margins)
         total_loss = 0.5 * np.dot(self.w, self.w) + self.C * np.sum(hinge_loss)
-        return total_loss
+        return total_loss / n_samples
 
     def decision_function(self, X):
         return np.dot(X, self.w) + self.b
